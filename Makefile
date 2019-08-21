@@ -1,13 +1,19 @@
 CC = gcc
 CFLAGS = -g -O0 -Wall -Wextra -Werror -std=c99 -pthread
 
-all: main
+all: sequencial
 
-main: main.o
-	$(CC) $(CFLAGS) main.o -o ep1
+main: sequencial.o constants.o input.o
+	$(CC) $(CFLAGS) sequencial.o constants.o -o sequencial
 
-main.o: main.c
-	$(CC) $(CFLAGS) -c main.c
+main.o: main.c constants.h input.h
+	$(CC) $(CFLAGS) -c sequencial.c
+
+input.o: input.c input.h
+	$(CC) $(CFLAGS) -c input.c
+
+constants.o: constants.c constans.h
+	$(CC) $(CFLAGS) -c constants.c
 
 clean:
-	rm *.o tp3
+	rm *.o sequencial
