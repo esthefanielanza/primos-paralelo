@@ -1,5 +1,6 @@
 #include "constants.c"
 #include "input.c"
+#include "primesSequentially.c"
 
 int main (int argc, char *argv[]){
 
@@ -12,8 +13,7 @@ int main (int argc, char *argv[]){
 	  return 0;	
   }
 
-  printf("max %d \n", max);
-  printf("type %s \n", type);
+  calculatePrimesSequentially(max);
 
 	(void)argc;
 	return 0;	
