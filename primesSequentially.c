@@ -5,8 +5,6 @@ void calculatePrimesSequentially(int max) {
 
   char *numbers = (char *)calloc(max, sizeof(char));
 
-
-
   for(int i = FIRST_PRIME; i < LAST_NUMBER_TO_TEST_MULTIPLES; i++) {
     int currentMultiple = i;
 
