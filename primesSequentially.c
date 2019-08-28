@@ -1,4 +1,6 @@
-void calculatePrimesParallel(int max, int p) {
+#include "primesSequentially.h"
+
+void calculatePrimesSequentially(int max){
   int FIRST_PRIME = 2;
   int LAST_NUMBER_TO_TEST_MULTIPLES = max/2 + 1;
   int IS_NOT_PRIME = 1;
@@ -6,6 +8,7 @@ void calculatePrimesParallel(int max, int p) {
   char *numbers = (char *)calloc(max, sizeof(char));
 
   int i;
+
   for(i = FIRST_PRIME; i < LAST_NUMBER_TO_TEST_MULTIPLES; i++) {
     int currentMultiple = i;
 

@@ -1,5 +1,4 @@
 #include "input.h"
-#include "constants.h"
 
 void readInput(char *argv[], int *max, char **type){
   *max = atoi(argv[1]);

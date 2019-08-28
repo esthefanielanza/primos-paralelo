@@ -1,22 +1,23 @@
 CC = gcc
-CFLAGS = -g -O0 -Wall -Wextra -Werror -std=c99 -pthread
+CFLAGS = -g -O0 -Wall -Wextra -Werror -std=c99
+LIBS = -lm
 
-all: sequencial
+all: main
 
-main: sequencial.o constants.o input.o primesSequentially.o
-	$(CC) $(CFLAGS) sequencial.o constants.o -o sequencial
+main: sequencial.o primesSequentially.o input.o constants.o
+	$(CC) $(CFLAGS) sequencial.o constants.o input.o primesSequentially.o -o sequencial
 
-main.o: main.c constants.h input.h primesSequentially.c
+sequencial.o: sequencial.c primesSequentially.h input.h constants.h
 	$(CC) $(CFLAGS) -c sequencial.c
+
+primesSequentially.o: primesSequentially.c primesSequentially.h
+	$(CC) $(CFLAGS) -c primesSequentially.c
 
 input.o: input.c input.h
 	$(CC) $(CFLAGS) -c input.c
 
-constants.o: constants.c constans.h
+constants.o: constants.c constants.h
 	$(CC) $(CFLAGS) -c constants.c
-
-primesSequentially.o: primesSequentially.c primesSequentially.h
-	$(CC) $(CFLAGS) -c primesSequentially.c
 
 clean:
 	rm *.o sequencial
