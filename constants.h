@@ -1,12 +1,12 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-static const char TIME[];
-static const char LIST[];
-static const char ALL[];
-static const char *TYPES[];
-static const char TYPES_INITIALS[];
+const char TIME;
+const char LIST;
+const char ALL;
 
-static const int MAX_10_POWER;
+const char *TYPES_INITIALS;
+
+const int MAX_10_POWER;
 
 #endif

@@ -1,18 +1,15 @@
 #include <omp.h>
+#include "input.h"
+#include "primesSequentially.h"
 
-#include "constants.c"
-#include "input.c"
-#include "primesSequentially.c"
-
-int main (int argc, char *argv[]){
-
+int main (int argc, char *argv[]) {
   int max;
   char *type;
   double start, finish;
 
   readInput(argv, &max, &type);
 
-  if(!isInputValid(max, type)) {
+  if(isInputValid(max, type) == 0) {
 	  return 0;	
   }
 
@@ -23,5 +20,5 @@ int main (int argc, char *argv[]){
   finish = omp_get_wtime();
 
 	(void)argc;
-	return 0;	
+	return 0;
 }
