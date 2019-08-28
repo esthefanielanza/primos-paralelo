@@ -7,8 +7,6 @@
 #include <math.h>
 #include <string.h>
 
-#include "constants.h"
-
 void readInput(char *argv[], int *max, char **type);
 int isInputValid(int max, char *type);
 

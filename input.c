@@ -1,4 +1,5 @@
 #include "input.h"
+#include "constants.h"
 
 void readInput(char *argv[], int *max, char **type){
   *max = atoi(argv[1]);
@@ -8,11 +9,7 @@ void readInput(char *argv[], int *max, char **type){
 int isTypeValid(char *string) {
   int i = 0;
 
-  while(TYPES[i] || TYPES_INITIALS[i]) {
-    if(strcmp(TYPES[i], string) == 0) {
-      return 0;
-    }
-
+  while(TYPES_INITIALS[i]) {
     if(strlen(string) == 1 && TYPES_INITIALS[i] == string[0]) {
       return 0;
     }

@@ -4,10 +4,10 @@ LIBS = -lm
 
 all: main
 
-main: sequencial.o primesSequentially.o input.o constants.o
-	$(CC) $(CFLAGS) sequencial.o constants.o input.o primesSequentially.o -o sequencial
+main: sequencial.o constants.o input.o primesSequentially.o
+	$(CC) $(CFLAGS) sequencial.o constants.o input.o primesSequentially.o -o sequencial $(LIBS)
 
-sequencial.o: sequencial.c primesSequentially.h input.h constants.h
+sequencial.o: sequencial.c primesSequentially.h input.h
 	$(CC) $(CFLAGS) -c sequencial.c
 
 primesSequentially.o: primesSequentially.c primesSequentially.h

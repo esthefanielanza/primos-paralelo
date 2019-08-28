@@ -22,7 +22,7 @@ void calculatePrimesSequentially(int max){
 
   for(i = FIRST_PRIME; i < max; i++) {
     if(numbers[i] != IS_NOT_PRIME) {
-      printf("%d, ", i);
+      printf("%d ", i);
     }
   }
 
