@@ -19,6 +19,7 @@ int main (int argc, char *argv[]) {
 
   finish = omp_get_wtime();
 
+  printf("%f %f\n", start, finish);
 	(void)argc;
 	return 0;
 }
