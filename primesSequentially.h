@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void calculatePrimesSequentially(int max);
+void calculatePrimesSequentially(int max, char * list);
 
 #endif

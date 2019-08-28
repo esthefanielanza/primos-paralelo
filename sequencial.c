@@ -1,11 +1,13 @@
 #include <omp.h>
+
 #include "input.h"
 #include "primesSequentially.h"
+#include "output.h"
 
 int main (int argc, char *argv[]) {
   int max;
   char *type;
-  double start, finish;
+  double startTime, finishTime;
 
   readInput(argv, &max, &type);
 
@@ -13,13 +15,18 @@ int main (int argc, char *argv[]) {
 	  return 0;	
   }
 
-  start = omp_get_wtime();
+  char *list = (char *)calloc(max, sizeof(char));
 
-  calculatePrimesSequentially(max);
+  startTime = omp_get_wtime();
 
-  finish = omp_get_wtime();
+  calculatePrimesSequentially(max, list);
 
-  printf("%f %f\n", start, finish);
+  finishTime = omp_get_wtime();
+
+  printOutput(type, startTime, finishTime, list, max);
+
+  free(list);
+
 	(void)argc;
 	return 0;
 }
