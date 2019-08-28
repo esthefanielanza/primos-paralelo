@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -O0 -Wall -Wextra -Werror -std=c99 -pthread
+CFLAGS = -g -O0 -Wall -Wextra -Werror -std=c99 -fopenmp
 
 all: sequencial
 
