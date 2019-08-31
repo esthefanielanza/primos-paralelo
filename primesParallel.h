@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void calculatePrimesParallel(int max, char * list);
+void calculatePrimesParallel(int max, char * list, int threads);
 
 #endif

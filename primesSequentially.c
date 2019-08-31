@@ -7,7 +7,7 @@ int NOT_PRIME = 1;
 void calculateMultiples(int max, char * list, int currentMultiple) {
   int j;
 
-  for(j = currentMultiple; j < max; j += currentMultiple) {
+  for(j = FIRST_PRIME * currentMultiple; j < max; j += currentMultiple) {
     if(j > max) {
       break;
     }

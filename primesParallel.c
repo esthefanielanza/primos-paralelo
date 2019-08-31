@@ -7,21 +7,21 @@ int NOT_PRIME = 1;
 void calculateMultiples(int max, char * list, int currentMultiple) {
   int j;
 
-  for(j = currentMultiple; j < max; j += currentMultiple) {
+  for(j = FIRST_PRIME * currentMultiple; j < max; j += currentMultiple) {
     if(j > max) {
-      break;
+      return;
     }
-  
     list[j] = NOT_PRIME;
   }
 }
 
-void calculatePrimesParallel(int max, char *list){
+void calculatePrimesParallel(int max, char *list, int threads){
 
   int LAST_NUMBER_TO_TEST_MULTIPLES = max/2 + 1;
 
   int currentMultiple;
-
+  
+  #pragma omp parallel for num_threads(threads) schedule(static, 1)
   for(currentMultiple = FIRST_PRIME; currentMultiple < LAST_NUMBER_TO_TEST_MULTIPLES; currentMultiple++) {
     if(list[currentMultiple] == IS_PRIME) {
       calculateMultiples(max, list, currentMultiple);

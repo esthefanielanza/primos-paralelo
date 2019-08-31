@@ -5,11 +5,13 @@
 #include "output.h"
 
 int main (int argc, char *argv[]) {
-  int max;
+  int max, threads;
   char *type;
   double startTime, finishTime;
 
   readInput(argv, &max, &type);
+
+  threads = atoi(argv[3]);
 
   if(isInputValid(max, type) == 0) {
 	  return 0;	
@@ -19,7 +21,7 @@ int main (int argc, char *argv[]) {
 
   startTime = omp_get_wtime();
 
-  calculatePrimesParallel(max, list);
+  calculatePrimesParallel(max, list, threads);
 
   finishTime = omp_get_wtime();
 

@@ -7,11 +7,11 @@ all: main
 main: parallel.o constants.o input.o primesParallel.o output.o
 	$(CC) $(CFLAGS) parallel.o constants.o input.o primesParallel.o output.o -o parallel $(LIBS)
 
-sequencial: sequencial.o constants.o input.o primesSequentially.o output.o
-	$(CC) $(CFLAGS) sequencial.o constants.o input.o primesSequentially.o output.o -o sequencial $(LIBS)
+sequential: sequential.o constants.o input.o primesSequentially.o output.o
+	$(CC) $(CFLAGS) sequential.o constants.o input.o primesSequentially.o output.o -o sequential $(LIBS)
 
-sequencial.o: sequencial.c primesSequentially.h input.h output.h
-	$(CC) $(CFLAGS) -c sequencial.c
+sequential.o: sequential.c primesSequentially.h input.h output.h
+	$(CC) $(CFLAGS) -c sequential.c
 
 parallel.o: parallel.c primesParallel.h input.h output.h
 	$(CC) $(CFLAGS) -c parallel.c
@@ -32,5 +32,5 @@ output.o: output.c output.h
 	$(CC) $(CFLAGS) -c output.c
 
 clean:
-	rm *.o sequencial parallel
+	rm *.o sequential parallel
 
