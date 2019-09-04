@@ -2,9 +2,9 @@ CC = gcc
 CFLAGS = -g -O0 -Wall -Wextra -Werror -std=c99 -fopenmp
 LIBS = -lm
 
-all: main
+all: parallel sequential clean
 
-main: parallel.o constants.o input.o primesParallel.o output.o
+parallel: parallel.o constants.o input.o primesParallel.o output.o
 	$(CC) $(CFLAGS) parallel.o constants.o input.o primesParallel.o output.o -o parallel $(LIBS)
 
 sequential: sequential.o constants.o input.o primesSequentially.o output.o
@@ -32,5 +32,5 @@ output.o: output.c output.h
 	$(CC) $(CFLAGS) -c output.c
 
 clean:
-	rm *.o sequential parallel
+	rm *.o
 
