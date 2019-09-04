@@ -17,7 +17,7 @@ void calculateMultiples(int max, char * list, int currentMultiple) {
 
 void calculatePrimesParallel(int max, char *list, int threads){
 
-  int LAST_NUMBER_TO_TEST_MULTIPLES = max/2 + 1;
+  int LAST_NUMBER_TO_TEST_MULTIPLES = sqrt(max) + 1;
 
   int currentMultiple;
   

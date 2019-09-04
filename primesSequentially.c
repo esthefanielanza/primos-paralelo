@@ -18,7 +18,7 @@ void calculateMultiples(int max, char * list, int currentMultiple) {
 
 void calculatePrimesSequentially(int max, char *list){
 
-  int LAST_NUMBER_TO_TEST_MULTIPLES = max/2 + 1;
+  int LAST_NUMBER_TO_TEST_MULTIPLES = sqrt(max) + 1;
 
   int currentMultiple;
 
