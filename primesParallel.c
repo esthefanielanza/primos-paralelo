@@ -27,7 +27,7 @@ void calculatePrimesParallel(int max, char *list, int threads){
   double t_timer;
   int this_thread;
 
-  #pragma omp parallel for num_threads(threads) schedule(static, 1)
+  #pragma omp parallel for num_threads(threads) schedule(dynamic, 2)
   for(currentMultiple = FIRST_PRIME; currentMultiple < LAST_NUMBER_TO_TEST_MULTIPLES; currentMultiple++) {
     
     t_timer = omp_get_wtime();
